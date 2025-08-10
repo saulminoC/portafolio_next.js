@@ -23,7 +23,7 @@ import {
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header/Hero Section */}
+      {/* Header/Hero Sectiongdfgf  */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <div className="relative container mx-auto px-4 py-20">
