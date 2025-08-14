@@ -23,7 +23,7 @@ import {
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header/Hero Sectiongdfgf  */}
+      {/* Header/Hero Section */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <div className="relative container mx-auto px-4 py-20">
@@ -199,7 +199,7 @@ export default function Portfolio() {
           <h2 className="text-4xl font-bold text-white text-center mb-12">Proyectos Destacados</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Sistema de Capital Humano */}
-            <Card className="bg-slate-800/80 border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <Card className="bg-slate-800/80 border-slate-700 hover:border-blue-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
                   src="/placeholder.svg?height=200&width=400"
@@ -218,11 +218,20 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                  <Button 
+                    size="sm" 
+                    className="bg-blue-600 hover:bg-blue-700" 
+                    disabled // <-- Botón "Ver Demo" deshabilitado
+                  >
                     <ExternalLink className="mr-1 h-4 w-4" />
                     Ver Demo
                   </Button>
-                  <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="border-slate-600 text-slate-300 bg-transparent" 
+                    disabled // <-- Botón "Código" deshabilitado
+                  >
                     <Github className="mr-1 h-4 w-4" />
                     Código
                   </Button>
@@ -231,7 +240,7 @@ export default function Portfolio() {
             </Card>
 
             {/* Citas Médicas */}
-            <Card className="bg-slate-800/80 border-slate-700 hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <Card className="bg-slate-800/80 border-slate-700 hover:border-green-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
                   src="/placeholder.svg?height=200&width=400"
@@ -250,11 +259,20 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                  <Button 
+                    size="sm" 
+                    className="bg-green-600 hover:bg-blue-700" 
+                    disabled // <-- Botón "Ver Demo" deshabilitado
+                  >
                     <ExternalLink className="mr-1 h-4 w-4" />
                     Ver Demo
                   </Button>
-                  <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="border-slate-600 text-slate-300 bg-transparent" 
+                    disabled // <-- Botón "Código" deshabilitado
+                  >
                     <Github className="mr-1 h-4 w-4" />
                     Código
                   </Button>
@@ -263,15 +281,15 @@ export default function Portfolio() {
             </Card>
 
             {/* Estudio de Fotografía */}
-            <Card className="bg-slate-800/80 border-slate-700 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <Card className="bg-slate-800/80 border-slate-700 hover:border-purple-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/estudio.png"
                   alt="Estudio de Fotografía"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
                 <div className="absolute top-4 right-4">
-                  <Badge className="bg-purple-600">HTML + CSS + JS</Badge>
+                  <Badge className="bg-blue-600">HTML + CSS + JS</Badge>
                 </div>
               </div>
               <CardHeader>
@@ -282,23 +300,29 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
-                    <ExternalLink className="mr-1 h-4 w-4" />
-                    Ver Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
-                    <Github className="mr-1 h-4 w-4" />
-                    Código
-                  </Button>
+                  {/* Botón de Demo con enlace */}
+                  <a href="https://saulminoc.github.io/estudio/" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+                      <ExternalLink className="mr-1 h-4 w-4" />
+                      Ver Demo
+                    </Button>
+                  </a>
+                  {/* Botón de Código con enlace */}
+                  <a href="https://github.com/saulminoC/estudio" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
+                      <Github className="mr-1 h-4 w-4" />
+                      Código
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
 
             {/* Punto de Venta Barbería */}
-            <Card className="bg-slate-800/80 border-slate-700 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <Card className="bg-slate-800/80 border-slate-700 hover:border-orange-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/barberia.png"
                   alt="Punto de Venta Barbería"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
@@ -314,11 +338,18 @@ export default function Portfolio() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
-                    <ExternalLink className="mr-1 h-4 w-4" />
-                    Ver Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
+                  <a href="https://barberia-system-galk8se9a-saulcartel12-gmailcoms-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" className="bg-orange-600 hover:bg-orange-700">
+                      <ExternalLink className="mr-1 h-4 w-4" />
+                      Ver Demo
+                    </Button>
+                  </a>
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="border-slate-600 text-slate-300 bg-transparent" 
+                    disabled // <-- Botón "Código" deshabilitado
+                  >
                     <Github className="mr-1 h-4 w-4" />
                     Código
                   </Button>
@@ -327,7 +358,7 @@ export default function Portfolio() {
             </Card>
 
             {/* Reservas Barbería */}
-            <Card className="bg-slate-800/80 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
+            <Card className="bg-slate-800/80 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
                   src="/placeholder.svg?height=200&width=400"
@@ -521,7 +552,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 border-t border-slate-700">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-slate-400">© 2024 Saúl. Desarrollado con ❤️ usando Next.js y Tailwind CSS.</p>
+          <p className="text-slate-400">© 2025 Saúl MC. Desarrollado con Next.js y Tailwind CSS.</p>
         </div>
       </footer>
     </div>
