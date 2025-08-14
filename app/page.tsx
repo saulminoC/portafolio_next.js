@@ -38,18 +38,22 @@ export default function Portfolio() {
                 código y las soluciones funcionales.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Target className="mr-2 h-5 w-5" />
-                  Ver Proyectos
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent"
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contáctame
-                </Button>
+                <a href="#proyectos">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+                    <Target className="mr-2 h-5 w-5" />
+                    Ver Proyectos
+                  </Button>
+                </a>
+                <a href="#contacto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent"
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contáctame
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="flex-shrink-0">
@@ -194,7 +198,7 @@ export default function Portfolio() {
       </section>
 
       {/* Proyectos Destacados */}
-      <section className="py-20 bg-slate-800/50">
+      <section id="proyectos" className="py-20 bg-slate-800/50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Proyectos Destacados</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -469,7 +473,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contacto */}
-      <section className="py-20 bg-slate-800/50">
+      <section id="contacto" className="py-20 bg-slate-800/50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-white text-center mb-12">Contacto</h2>
           <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
