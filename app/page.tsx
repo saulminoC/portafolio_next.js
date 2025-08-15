@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { useForm } from "@formspree/react";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +25,21 @@ import {
 } from "lucide-react"
 
 export default function Portfolio() {
+  const [state, handleSubmit] = useForm("xrbldegq");
+
+  // Mensaje de éxito
+  if (state.succeeded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
+          <div className="text-center p-8 bg-slate-800/80 rounded-lg shadow-xl">
+              <CheckCircle className="mx-auto h-16 w-16 text-green-400 mb-4" />
+              <h3 className="text-3xl font-bold text-white">¡Gracias por tu mensaje!</h3>
+              <p className="text-slate-300 mt-2">Me pondré en contacto contigo pronto.</p>
+          </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Header/Hero Section */}
@@ -478,40 +497,51 @@ export default function Portfolio() {
           <h2 className="text-4xl font-bold text-white text-center mb-12">Contacto</h2>
           <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulario */}
-            <Card className="bg-slate-800/80 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white">Envíame un mensaje</CardTitle>
-                <CardDescription className="text-slate-400">
-                  ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Input
-                    placeholder="Tu nombre"
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Tu email"
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Tu mensaje"
-                    rows={5}
-                    className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
-                  />
-                </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Enviar Mensaje
-                </Button>
-              </CardContent>
-            </Card>
+            <form onSubmit={handleSubmit}>
+              <Card className="bg-slate-800/80 border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-white">Envíame un mensaje</CardTitle>
+                  <CardDescription className="text-slate-400">
+                    ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <Input
+                      id="name"
+                      name="name"  // <-- Añadido
+                      placeholder="Tu nombre"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      id="email"
+                      type="email"
+                      name="email" // <-- Añadido
+                      placeholder="Tu email"
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Textarea
+                      id="message"
+                      name="message" // <-- Añadido
+                      placeholder="Tu mensaje"
+                      rows={5}
+                      className="bg-slate-700 border-slate-600 text-white placeholder:text-slate-400"
+                      required
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={state.submitting}>
+                    <Mail className="mr-2 h-4 w-4" />
+                    {state.submitting ? "Enviando..." : "Enviar Mensaje"}
+                  </Button>
+                </CardContent>
+              </Card>
+            </form>
 
             {/* Información de contacto */}
             <div className="space-y-8">
