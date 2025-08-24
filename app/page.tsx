@@ -384,7 +384,7 @@ export default function Portfolio() {
             <Card className="bg-slate-800/80 border-slate-700 hover:border-cyan-500/50 transition-all duration-300 ">
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=200&width=400"
+                  src="/pos.png"
                   alt="Reservas Barbería"
                   className="w-full h-48 object-cover rounded-t-lg"
                 />
@@ -393,21 +393,27 @@ export default function Portfolio() {
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-white">Página de Reservas para Barbería</CardTitle>
+                <CardTitle className="text-white">Punto de venta</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Registro de citas inteligente con control de disponibilidad en tiempo real.
+                  Un sistema de Punto de Venta (POS) full-stack moderno, construido con una API robusta en Laravel y un frontend reactivo y profesional en Next.js y React.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-2 mb-4">
-                  <Button size="sm" className="bg-cyan-600 hover:bg-cyan-700">
-                    <ExternalLink className="mr-1 h-4 w-4" />
-                    Ver Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
-                    <Github className="mr-1 h-4 w-4" />
-                    Código
-                  </Button>
+                  {/* Botón de Demo con enlace */}
+                  <a href="https://saulminoc.github.io/punto-de-venta-laravel-nextjs" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+                      <ExternalLink className="mr-1 h-4 w-4" />
+                      Ver Demo
+                    </Button>
+                  </a>
+                  {/* Botón de Código con enlace */}
+                  <a href="https://github.com/saulminoC/punto-de-venta-laravel-nextjs.git" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="outline" className="border-slate-600 text-slate-300 bg-transparent">
+                      <Github className="mr-1 h-4 w-4" />
+                      Código
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
